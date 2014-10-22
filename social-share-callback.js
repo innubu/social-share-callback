@@ -19,7 +19,7 @@ window.socialShareCallback = (function(window, document){
     // TODO
   }
 
-  this.load = function(medias) {
+  function load(medias) {
     for(var i=0, total=medias.length; i<total; i++) {
       switch(medias[i]) {
         case 'facebook':
@@ -35,20 +35,25 @@ window.socialShareCallback = (function(window, document){
     }
   };
 
-  this.twitter = function(callback) {
+  function twitter(callback) {
     twttr.ready(function (twttr) {
-        twttr.events.bind('tweet', callback);
+      twttr.events.bind('tweet', callback);
     });
   };
 
-  this.facebook = function(callback) {
+  function facebook(callback) {
     // TODO
   };
 
-  this.linkedin = function(callback, errorCallback) {
+  function linkedin(callback, errorCallback) {
     // TODO
   };
 
-  return this;
+  return {
+    load: load,
+    twiter: twitter,
+    facebook: facebook,
+    linkedin: linkedin
+  };
 
 })(window, document);
