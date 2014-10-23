@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Full example</title>
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  </head>
+  <body>
+    <!-- Twitter Share button -->
+    <a class="twitter-share-button" data-lang="en" data-text="Here is the data text" data-url="https://innubu.com" href="https://twitter.com/share">Tweet</a>
+    <!-- Facebook Share button -->
+    <a onClick="shareFB('https://innubu.com')"><img src="fb-share.png" border='0'></a>
+    <!-- LinkedIn Share button -->
+    <script type="IN/Share" data-counter="right" data-url="https://innubu.com"></script>
+
+    <script src="../social-share-callback.js"></script>
+    <script>
+      socialShareCallback.twitter(function(event) {
+        alert('Shared on Twitter!');
+        console.log(event);
+      });
+
+      function shareFB(url) {
+        socialShareCallback.facebook(url, function(response) {
+          alert('Shared on Facebook!');
+          console.log(response);
+        });
+      }
+
+      socialShareCallback.loadFacebook("307260879379043", function() {
+        // You can remove this callback
+        console.log("FB Loaded");
+      });
+
+      socialShareCallback.linkedin(function(data) {
+        alert('Shared on LinkedIn!');
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>
