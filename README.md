@@ -10,24 +10,24 @@ Capture the share callbacks on Facebook, Twitter (tweet) and/or LinkedIn
 socialShareCallback.load(['facebook','twitter'])
 ```
 
-### simple-social-share.facebook
-Share on Facebook
+### Facebook
+Set the Share on Facebook callback
 ```javascript
 socialShareCallback.facebook(function() {
 	// Succesful Share on Facebook Callback
 })
 ```
 
-### simple-social-share.twitter
-Share on Twitter
+### Twitter
+Set the Share on Twitter callback
 ```javascript
 socialShareCallback.twitter(function(tweetEvent) {
 	// Succesful Tweet Callback
 })
 ```
 
-### simple-social-share.linkedin
-Share on LinkedIn
+### Linkedin
+Set the Share on LinkedIn callbacks
 ```javascript
 socialShareCallback.linkedin(function() {
 	// Succesfull Share on LinkedIn Callback

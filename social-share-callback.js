@@ -2,8 +2,27 @@
 
 window.socialShareCallback = (function(window, document){
 
+  function loadScript(src, callback)
+  {
+    var r = false;
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = src;
+    s.onload = s.onreadystatechange = function() {
+      if ( !r && (!this.readyState || this.readyState == 'complete') )
+      {
+        r = true;
+        if(callback) {
+          callback();
+        }
+      }
+    };
+    var t = document.getElementsByTagName('script')[0];
+    t.parentNode.insertBefore(s, t);
+  }
+
   function loadFacebook() {
-    // TODO
+    loadScript('http://connect.facebook.net/en_US/all.js');
   }
 
   function loadTwitter() {
@@ -23,13 +42,13 @@ window.socialShareCallback = (function(window, document){
     for(var i=0, total=medias.length; i<total; i++) {
       switch(medias[i]) {
         case 'facebook':
-          this.loadFacebook();
+          loadFacebook();
           break;
         case 'twitter':
-          this.loadTwitter();
+          loadTwitter();
           break;
         case 'linkedin':
-          this.loadLinkedIn();
+          loadLinkedIn();
           break;
       }
     }
@@ -42,7 +61,9 @@ window.socialShareCallback = (function(window, document){
   };
 
   function facebook(callback) {
-    // TODO
+    FB.Event.subscribe('message.send', function(targetUrl) {
+      callback(targetUrl);
+    });
   };
 
   function linkedin(callback, errorCallback) {
