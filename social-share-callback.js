@@ -35,7 +35,7 @@ window.socialShareCallback = (function(window, document){
   }
 
   function loadLinkedIn() {
-    // TODO
+    loadScript('//platform.linkedin.com/in.js');
   }
 
   function load(medias) {
@@ -67,7 +67,9 @@ window.socialShareCallback = (function(window, document){
   };
 
   function linkedin(callback, errorCallback) {
-    // TODO
+    var li = document.querySelector("script[type='IN/Share']");
+    li['data-sucess'] = callback;
+    li['data-error'] = errorCallback;
   };
 
   return {
