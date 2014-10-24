@@ -8,7 +8,7 @@
     <!-- Twitter Share button -->
     <a class="twitter-share-button" data-lang="en" data-text="Here is the data text" data-url="https://innubu.com" href="https://twitter.com/share">Tweet</a>
     <!-- Facebook Share button -->
-    <a onClick="shareFB('https://innubu.com')"><img src="fb-share.png" border='0'></a>
+    <a onClick="shareFB()"><img src="fb-share.png" border='0'></a>
     <!-- LinkedIn Share button -->
     <script type="IN/Share" data-counter="right" data-url="https://innubu.com"></script>
 
@@ -19,8 +19,8 @@
         console.log(event);
       });
 
-      function shareFB(url) {
-        socialShareCallback.facebook(url, function(response) {
+      function shareFB() {
+        socialShareCallback.facebook(function(response) {
           alert('Shared on Facebook!');
           console.log(response);
         });

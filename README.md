@@ -11,7 +11,7 @@ Check a full (and simple) example in examples folder
 Set the Share on Twitter callback
 ```javascript
 socialShareCallback.twitter(function(tweetEvent) {
-	// Succesful Tweet Callback
+	// Successful Tweet Callback
 })
 ```
 
@@ -26,7 +26,7 @@ socialShareCallback.loadFacebook("307260879379043", function() {
 Share a URL and set the successful callback
 ```javascript
 socialShareCallback.facebook('https://innubu.com', function(response) {
-	// Succesful Share on Facebook Callback
+	// Successful Share on Facebook Callback
 	// Example output of response
 	// response = { post_id: '1090930483948394839' }
 })
@@ -36,7 +36,7 @@ socialShareCallback.facebook('https://innubu.com', function(response) {
 Set the Share on LinkedIn callbacks
 ```javascript
 socialShareCallback.linkedin(function() {
-	// Succesfull Share on LinkedIn Callback
+	// Successful Share on LinkedIn Callback
 })
 ```
 
