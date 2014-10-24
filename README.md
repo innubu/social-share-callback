@@ -23,9 +23,9 @@ socialShareCallback.loadFacebook("307260879379043", function() {
   console.log("FB Loaded");
 });
 ```
-Share a URL and set the successful callback
+Share the current URL and set the successful callback
 ```javascript
-socialShareCallback.facebook('https://innubu.com', function(response) {
+socialShareCallback.facebook(function(response) {
 	// Successful Share on Facebook Callback
 	// Example output of response
 	// response = { post_id: '1090930483948394839' }
