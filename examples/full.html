@@ -3,6 +3,24 @@
     <title>Full example</title>
     <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '307260879379043',
+          status     : true,
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
   </head>
   <body>
     <!-- Twitter Share button -->
@@ -25,11 +43,6 @@
           console.log(response);
         });
       }
-
-      socialShareCallback.loadFacebook("307260879379043", function() {
-        // You can remove this callback
-        console.log("FB Loaded");
-      });
 
       socialShareCallback.linkedin(function(data) {
         alert('Shared on LinkedIn!');

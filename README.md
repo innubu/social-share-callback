@@ -16,11 +16,13 @@ socialShareCallback.twitter(function(tweetEvent) {
 ```
 
 ### Facebook
-You have to load FB JS with your appId
-If you are already loading FB with your appId, just skip this step
+Please check you are setting your appId
 ```javascript
-socialShareCallback.loadFacebook("307260879379043", function() {
-  console.log("FB Loaded");
+FB.init({
+  appId      : 'your-appId',
+  status     : true,
+  xfbml      : true,
+  version    : 'v2.1'
 });
 ```
 Share the current URL and set the successful callback
