@@ -27,7 +27,6 @@ window.socialShareCallback = (function(window, document){
   };
 
   return {
-    loadFacebook: loadFacebook,
     twitter: twitter,
     facebook: facebook,
     linkedin: linkedin
