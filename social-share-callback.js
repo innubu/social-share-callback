@@ -5,10 +5,10 @@ window.socialShareCallback = (function(window, document){
   function facebook(callback) {
     FB.ui({
       method: 'share',
-      href: location.href,
+      href: location.href
     }, function(response){
-      if(callback && response && response.post_id) {
-        callback(null, response)
+      if(callback && response) {
+        callback(null, response);
       }
     });
   };
